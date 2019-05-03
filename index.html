@@ -320,7 +320,32 @@
       
         
           
-            <h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><p>1.在MySQL官网中找到yum地址：<a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a><br>2.wget <a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a><br>3.安装mysql源：yum localinstall mysql80-community-release-el7-1.noarch.rpm<br>4.检查安装是否成功：yum repolist enabled |grep “mysql.<em>-community.</em>“<br>5.指定安装版本：通过修改 /etc/yum.repos.d/mysql-community.repo源 文件。<br>6.安装：yum install mysql-community-server<br>7.启动：service mysqld start<br>8.查看状态：service mysqld status<br>9.开机启动：<br>   1.systemctl enable mysqld<br>   2.systemctl daemon-reload<br>10.修改默认密码：默认密码在/var/log/mysqld.log<br>11.修改密码：ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘root,!@#123’;<br>11.查看密码策略：SHOW VARIABLES LIKE ‘validate_password%’;<br>12.修改密码策略：set global validate_password.policy=0;<br>13.设置用户远程访问：use mysql  select host,user from user<br>update user set host=’%’ where user =’root’;<br>flush privileges;<br>默认编码方式查看：SHOW VARIABLES WHERE Variable_name LIKE ‘character_set_%’ OR Variable_name LIKE ‘collation%’;  </p>
+            <h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><ol>
+<li>在MySQL官网中找到yum地址：<a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a>  </li>
+<li>wget <a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a>  </li>
+<li>安装mysql源：yum localinstall mysql80-community-release-el7-1.noarch.rpm  </li>
+<li>检查安装是否成功：yum repolist enabled |grep “mysql.<em>-community.</em>“  </li>
+<li>指定安装版本：通过修改 /etc/yum.repos.d/mysql-community.repo源文件  </li>
+<li>安装：yum install mysql-community-server  </li>
+<li>启动：service mysqld start  </li>
+<li>查看状态：service mysqld status  </li>
+<li>设置开机启动：<ol>
+<li>systemctl enable mysqld  </li>
+<li>systemctl daemon-reload</li>
+</ol>
+</li>
+<li>修改默认密码：默认密码在/var/log/mysqld.log  </li>
+<li>修改密码：ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘root,!@#123’;  </li>
+<li>查看密码策略：SHOW VARIABLES LIKE ‘validate_password%’;  </li>
+<li>修改密码策略：set global validate_password.policy=0;  </li>
+<li>设置用户远程访问：  <ol>
+<li>use mysql select host,user from user</li>
+<li>update user set host=’%’ where user =’root’;</li>
+<li>flush privileges;   </li>
+</ol>
+</li>
+<li>查看默认编码：SHOW VARIABLES WHERE Variable_name LIKE ‘character_set_%’ OR Variable_name LIKE ‘collation%’;</li>
+</ol>
 
           
         
