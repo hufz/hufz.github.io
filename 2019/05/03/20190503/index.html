@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/tags/个人博客/index.html">
+<meta name="description" content="安装mysql1.在MySQL官网中找到yum地址：https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm2.wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm3.安装mysql源：yum localinstall mys">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20190503">
+<meta property="og:url" content="http://yoursite.com/2019/05/03/20190503/index.html">
 <meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="安装mysql1.在MySQL官网中找到yum地址：https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm2.wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm3.安装mysql源：yum localinstall mys">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-03T06:09:21.023Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
+<meta name="twitter:title" content="20190503">
+<meta name="twitter:description" content="安装mysql1.在MySQL官网中找到yum地址：https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm2.wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm3.安装mysql源：yum localinstall mys">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/个人博客/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/03/20190503/">
 
 
 
 
 
-  <title>Tag: 个人博客 | 我的博客</title>
+  <title>20190503 | 我的博客</title>
   
 
 
@@ -140,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,52 +238,146 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>个人博客<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/20190503/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hufz">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/20484149.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/11/30/20181130/" itemprop="url">
-              
-                <span itemprop="name">hexo+github+travis</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">20190503</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-30T14:12:04+08:00" content="2018-11-30">
-          11-30
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-03T11:00:45+08:00">
+                2019-05-03
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><p>1.在MySQL官网中找到yum地址：<a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a><br>2.wget <a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a><br>3.安装mysql源：yum localinstall mysql80-community-release-el7-1.noarch.rpm<br>4.检查安装是否成功：yum repolist enabled |grep “mysql.<em>-community.</em>“<br>5.指定安装版本：通过修改 /etc/yum.repos.d/mysql-community.repo源 文件。<br>6.安装：yum install mysql-community-server<br>7.启动：service mysqld start<br>8.查看状态：service mysqld status<br>9.开机启动：<br>   1.systemctl enable mysqld<br>   2.systemctl daemon-reload<br>10.修改默认密码：默认密码在/var/log/mysqld.log<br>11.修改密码：ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘root,!@#123’;<br>11.查看密码策略：SHOW VARIABLES LIKE ‘validate_password%’;<br>12.修改密码策略：set global validate_password.policy=0;<br>13.设置用户远程访问：<br>   use mysql<br>   select host,user from user  </p>
+<ol start="14">
+<li>update user set host=’%’ where user =’root’;  </li>
+<li>flush privileges;  </li>
+<li>默认编码方式查看：SHOW VARIABLES WHERE Variable_name LIKE ‘character_set_%’ OR Variable_name LIKE ‘collation%’;  </li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/11/20190411/index/" rel="next" title="20190411">
+                <i class="fa fa-chevron-left"></i> 20190411
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -287,6 +385,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -307,8 +409,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -377,6 +488,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装mysql"><span class="nav-number">1.</span> <span class="nav-text">安装mysql</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -517,6 +644,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

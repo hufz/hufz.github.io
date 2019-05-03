@@ -249,6 +249,253 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/20190503/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hufz">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/20484149.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/03/20190503/" itemprop="url">20190503</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-03T11:00:45+08:00">
+                2019-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><p>1.在MySQL官网中找到yum地址：<a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a><br>2.wget <a href="https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</a><br>3.安装mysql源：yum localinstall mysql80-community-release-el7-1.noarch.rpm<br>4.检查安装是否成功：yum repolist enabled |grep “mysql.<em>-community.</em>“<br>5.指定安装版本：通过修改 /etc/yum.repos.d/mysql-community.repo源 文件。<br>6.安装：yum install mysql-community-server<br>7.启动：service mysqld start<br>8.查看状态：service mysqld status<br>9.开机启动：<br>   1.systemctl enable mysqld<br>   2.systemctl daemon-reload<br>10.修改默认密码：默认密码在/var/log/mysqld.log<br>11.修改密码：ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘root,!@#123’;<br>11.查看密码策略：SHOW VARIABLES LIKE ‘validate_password%’;<br>12.修改密码策略：set global validate_password.policy=0;<br>13.设置用户远程访问：<br>   use mysql<br>   select host,user from user  </p>
+<ol start="14">
+<li>update user set host=’%’ where user =’root’;  </li>
+<li>flush privileges;  </li>
+<li>默认编码方式查看：SHOW VARIABLES WHERE Variable_name LIKE ‘character_set_%’ OR Variable_name LIKE ‘collation%’;  </li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/20190411/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hufz">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/20484149.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/11/20190411/index/" itemprop="url">20190411</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-11T14:32:17+08:00">
+                2019-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1&gt;下载jdk<br>wget -P /mnt/download/jdk  <a href="http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz" target="_blank" rel="noopener">http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz</a><br>2&gt;下载文件并重命名<br>wget -c <a href="http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz?AuthParam=1535356009_8e01bd0f3fe29cadba788f49f0832967" target="_blank" rel="noopener">http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz?AuthParam=1535356009_8e01bd0f3fe29cadba788f49f0832967</a> -O jdk-8u181-linux-x64.tar.gz<br>3&gt;将jdk安装包解压到指定目录/mnt/soft/<br>tar -zxvf jdk-8u181-linux-x64.tar.gz -C /mnt/soft/<br>4&gt;配置jdk环境变量<br>vim /etc/profile<br>export JAVA_HOME=/mnt/soft/jdk1.8.0_181<br>export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH<br>export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<br>5&gt;配置生效<br>source /etc/profile<br>6&gt;验证jdk是否配好<br>java -version</p>
+<p>1&gt;下载maven<br>wget -P /mnt/download/maven/ -c <a href="http://mirrors.shu.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz" target="_blank" rel="noopener">http://mirrors.shu.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz</a> -O apache-maven-3.5.4-bin.tar.gz<br>2&gt;解压maven到指定目录<br>tar -zxvf /mnt/download/maven/apache-maven-3.5.4-bin.tar.gz -C /mnt/soft/<br>3&gt;配置maven<br>vim /etc/profile<br>export MAVEN_HOME=/mnt/soft/apache-maven-3.5.4<br>export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH<br>4&gt;配置生效<br>source /etc/profile<br>5&gt;验证maven是否配好<br>mvn -version</p>
+<p>1&gt;<br>vim /usr/mycode/test.txt<br>2&gt;i键,然后按esc,然后按yy复制当前行,p粘贴复制的内容<br>d删除当前行</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/20190308/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -644,7 +891,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
