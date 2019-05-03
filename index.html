@@ -344,7 +344,7 @@
 <li>flush privileges;   </li>
 </ol>
 </li>
-<li>查看默认编码：SHOW VARIABLES WHERE Variable_name LIKE ‘character_set_%’ OR Variable_name LIKE ‘collation%’;</li>
+<li>编码：SHOW VARIABLES WHERE Variable_name LIKE ‘character_set_%’ OR Variable_name LIKE ‘collation%’;</li>
 </ol>
 
           
@@ -413,7 +413,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/11/20190411/index/" itemprop="url">20190411</a></h1>
+                <a class="post-title-link" href="/2019/04/11/20190411/index/" itemprop="url">配置jdk，maven</a></h1>
         
 
         <div class="post-meta">
@@ -465,9 +465,21 @@
       
         
           
-            <p>1&gt;下载jdk<br>wget -P /mnt/download/jdk  <a href="http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz" target="_blank" rel="noopener">http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz</a><br>2&gt;下载文件并重命名<br>wget -c <a href="http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz?AuthParam=1535356009_8e01bd0f3fe29cadba788f49f0832967" target="_blank" rel="noopener">http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz?AuthParam=1535356009_8e01bd0f3fe29cadba788f49f0832967</a> -O jdk-8u181-linux-x64.tar.gz<br>3&gt;将jdk安装包解压到指定目录/mnt/soft/<br>tar -zxvf jdk-8u181-linux-x64.tar.gz -C /mnt/soft/<br>4&gt;配置jdk环境变量<br>vim /etc/profile<br>export JAVA_HOME=/mnt/soft/jdk1.8.0_181<br>export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH<br>export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<br>5&gt;配置生效<br>source /etc/profile<br>6&gt;验证jdk是否配好<br>java -version</p>
-<p>1&gt;下载maven<br>wget -P /mnt/download/maven/ -c <a href="http://mirrors.shu.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz" target="_blank" rel="noopener">http://mirrors.shu.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz</a> -O apache-maven-3.5.4-bin.tar.gz<br>2&gt;解压maven到指定目录<br>tar -zxvf /mnt/download/maven/apache-maven-3.5.4-bin.tar.gz -C /mnt/soft/<br>3&gt;配置maven<br>vim /etc/profile<br>export MAVEN_HOME=/mnt/soft/apache-maven-3.5.4<br>export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH<br>4&gt;配置生效<br>source /etc/profile<br>5&gt;验证maven是否配好<br>mvn -version</p>
-<p>1&gt;<br>vim /usr/mycode/test.txt<br>2&gt;i键,然后按esc,然后按yy复制当前行,p粘贴复制的内容<br>d删除当前行</p>
+            <h4 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h4><ol>
+<li>下载jdk:<br>wget -P /mnt/download/jdk  <a href="http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz" target="_blank" rel="noopener">http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz</a></li>
+<li>下载文件并重命名:<br>wget -c <a href="http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz?AuthParam=1535356009_8e01bd0f3fe29cadba788f49f0832967" target="_blank" rel="noopener">http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz?AuthParam=1535356009_8e01bd0f3fe29cadba788f49f0832967</a> -O jdk-8u181-linux-x64.tar.gz</li>
+<li>将jdk安装包解压到指定目录/mnt/soft/:<br>tar -zxvf jdk-8u181-linux-x64.tar.gz -C /mnt/soft/</li>
+<li>配置jdk环境变量:<br>vim /etc/profile<br>export JAVA_HOME=/mnt/soft/jdk1.8.0_181<br>export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH<br>export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</li>
+<li>配置生效:source /etc/profile</li>
+<li>验证jdk是否配好:java -version</li>
+</ol>
+<h4 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h4><ol>
+<li>下载maven<br>wget -P /mnt/download/maven/ -c <a href="http://mirrors.shu.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz" target="_blank" rel="noopener">http://mirrors.shu.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz</a> -O apache-maven-3.5.4-bin.tar.gz</li>
+<li>解压maven到指定目录<br>tar -zxvf /mnt/download/maven/apache-maven-3.5.4-bin.tar.gz -C /mnt/soft/</li>
+<li>配置maven<br>vim /etc/profile<br>export MAVEN_HOME=/mnt/soft/apache-maven-3.5.4<br>export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH</li>
+<li>配置生效<br>source /etc/profile</li>
+<li>验证maven是否配好<br>mvn -version</li>
+</ol>
 
           
         
